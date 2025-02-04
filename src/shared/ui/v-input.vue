@@ -12,7 +12,9 @@ interface InputProps {
 const props = defineProps<InputProps>()
 
 watchEffect(() => {
-  if (model?.value?.length > props.limit) {
+  if (!model.value || !props.limit) return
+
+  if (model.value.length > props.limit) {
     model.value = model.value.slice(0, props.limit)
   }
 })

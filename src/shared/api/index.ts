@@ -41,11 +41,11 @@ axiosInstance.interceptors.response.use(
       return Promise.reject(error)
     }
 
-    if (Array.isArray(response?.data?.message)) {
-      response.data.message = response.data.message.join('. ')
-    }
-
     const data: ApiError = response.data as ApiError
+
+    if (Array.isArray(data.message)) {
+      data.message = data.message.join('. ')
+    }
 
     console.error('[API Error]', {
       statusCode: data?.statusCode,

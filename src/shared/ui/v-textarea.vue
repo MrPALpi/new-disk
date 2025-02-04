@@ -11,8 +11,10 @@ interface InputProps {
 const props = defineProps<InputProps>()
 
 watchEffect(() => {
-  if (model?.value?.length > props.limit) {
-    model.value = model?.value.slice(0, props.limit)
+  if (!model.value || !props.limit) return
+
+  if (model.value.length > props.limit) {
+    model.value = model.value.slice(0, props.limit)
   }
 })
 </script>
@@ -23,11 +25,15 @@ watchEffect(() => {
     <span class="input-label__box">
       <textarea v-model="model" v-bind="$attrs" class="input-label__area input" />
     </span>
-    <span v-if="!!limit || !!error" class="input-label__bottom text-small">
-      <span class="input-label__error">{{ error }}</span>
-      <span v-if="limit" class="input-label__bottom-limit">
-        {{ model?.length || model || 0 }} / {{ limit }}</span
-      >
+    <span class="input-label__bottom text-small">
+      <transition name="error">
+        <span v-if="!!error" class="input-label__error">
+          {{ error }}
+        </span>
+      </transition>
+      <span v-if="!!limit" class="input-label__bottom-limit">
+        {{ typeof model === 'string' ? model.length : model || 0 }} / {{ limit }}
+      </span>
     </span>
   </label>
 </template>

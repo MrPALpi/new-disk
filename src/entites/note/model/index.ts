@@ -12,8 +12,13 @@ export const useNoteStore = defineStore('note', () => {
     loading.value = true
     try {
       const data = await noteApi.fetch()
-      notes.value = data
-      return { status: true }
+
+      if (Array.isArray(data)) {
+        notes.value = data
+        return { status: true }
+      } else {
+        throw data
+      }
     } catch (error: unknown) {
       const { statusCode, message } = error as ApiError
       return {
@@ -28,9 +33,14 @@ export const useNoteStore = defineStore('note', () => {
   const add = async (note: Note): Promise<Action> => {
     loading.value = true
     try {
-      const data = await noteApi.add(note)
-      notes.value?.push(data)
-      return { status: true }
+      const newNote: Note | ApiError = await noteApi.add(note)
+
+      if ('title' in newNote && 'content' in newNote) {
+        notes.value.push(newNote)
+        return { status: true }
+      } else {
+        throw newNote
+      }
     } catch (error: unknown) {
       const { statusCode, message } = error as ApiError
       return {
@@ -46,7 +56,7 @@ export const useNoteStore = defineStore('note', () => {
     loading.value = true
     try {
       await noteApi.delete(id)
-      notes.value = notes.value ? notes.value.filter((note) => note.id !== id) : null
+      notes.value = notes.value.filter((note) => note.id !== id)
       return { status: true }
     } catch (error: unknown) {
       const { statusCode, message } = error as ApiError

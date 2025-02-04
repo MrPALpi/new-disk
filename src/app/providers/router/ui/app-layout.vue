@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { defineAsyncComponent, watch, shallowRef } from 'vue'
-import { layouts, type Layout } from '../layouts'
+import { layouts } from '../layouts'
+import type { Layout } from '../index.d'
 
 const route = useRoute()
 
