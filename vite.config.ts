@@ -10,6 +10,7 @@ const PROXY_URL = env.VITE_PROXY_URL
 // https://vite.dev/config/
 export default defineConfig(({}: ConfigEnv): UserConfig => {
   return {
+    base: '/new-disk',
     plugins: [vue(), vueDevTools()],
     resolve: {
       alias: {
