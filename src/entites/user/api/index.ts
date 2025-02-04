@@ -20,7 +20,6 @@ export const userApi = {
     confirm_password: string,
   ): Promise<GetUser | ApiError> {
     const response = await axiosInstance.post('/api/reg', { email, password, confirm_password })
-    console.log(response)
     return response?.data
   },
 

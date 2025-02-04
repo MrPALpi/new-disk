@@ -8,7 +8,6 @@ const router = useRouter()
 
 const logout = () => {
   userStore.logout().then(() => {
-    console.log('tets')
     router.push({ name: 'home' })
   })
 }
