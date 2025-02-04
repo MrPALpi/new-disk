@@ -1,0 +1,65 @@
+@use '@/shared/styles/mixins.scss' as *;
+@use '@/shared/styles/vars.scss' as *;
+
+.form__inputs {
+  @include flex-list-column(16px);
+}
+
+.form__submit {
+  flex: 100%;
+}
+
+.form__bottom {
+  @include flex-list-wrap(20px, 40px);
+
+  & {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form__bottom-text {
+  flex: 1;
+  word-break: break-word;
+  color: $gray;
+}
+
+.form__error {
+  flex: 100%;
+  order: -1;
+  display: block;
+  padding: 8px 20px;
+  border-radius: 24px;
+  color: $red;
+  background-color: $red-light;
+}
+
+.form-error-enter-active,
+.form-error-leave-active {
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+  transform-origin: left;
+}
+
+.form-error-enter-from,
+.form-error-leave-to {
+  opacity: 0;
+  transform: translateX(-20px) scaleY(0);
+}
+
+@include tablet-up {
+  .form__inputs {
+    gap: 24px;
+  }
+
+  .form__submit {
+    margin-left: auto;
+    flex: initial;
+  }
+
+  .form__bottom {
+    justify-content: space-between;
+  }
+}

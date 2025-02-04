@@ -1,0 +1,74 @@
+@use '@/shared/styles/base.scss';
+@use '@/shared/styles/text.scss';
+@use '@/shared/styles/title.scss';
+@use '@/shared/styles/input.scss';
+@use '@/shared/styles/form.scss';
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+
+  @include tablet-up {
+    padding: 0 40px;
+  }
+
+  @include laptop-up {
+    padding: 0 80px;
+  }
+
+  @include desktop-up {
+    padding: 0 160px;
+    max-width: calc($max-desktop + 320px);
+  }
+}
+
+.container_loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+a {
+  color: $green-light;
+  transition: color 0.2s ease-in-out;
+
+  @include hover {
+    &:hover {
+      color: $white;
+    }
+  }
+
+  @include hover-none {
+    &:active,
+    &:focus {
+      color: $white;
+    }
+  }
+}
+
+.hide-on-mobile {
+  @include to-tablet {
+    display: none;
+  }
+}
+
+.input {
+  flex: 1 1 auto;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  border: none;
+
+  &::placeholder {
+    color: $gray;
+  }
+}
+
+.note__delete .btn__icon {
+  width: 16px;
+  height: 16px;
+}

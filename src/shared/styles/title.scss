@@ -1,0 +1,40 @@
+@use './mixins.scss' as *;
+
+.title-h1 {
+  font-size: 60px;
+  line-height: 64px;
+  font-weight: 900;
+
+  @include tablet-up {
+    font-size: 104px;
+    line-height: 104px;
+  }
+}
+
+.title-h2 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 36px;
+
+  @include tablet-up {
+    font-size: 48px;
+    line-height: 72px;
+  }
+}
+
+.title-h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+
+  @include tablet-up {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+.title-h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}

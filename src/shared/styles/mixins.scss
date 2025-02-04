@@ -1,0 +1,107 @@
+@use './vars' as *;
+
+@mixin desktop-up {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin to-laptop {
+  @media (min-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin laptop-up {
+  @media (min-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin to-tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile-up {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin to-mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin hover-none {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-list($gap: 0) {
+  @include flex-row;
+
+  gap: $gap;
+}
+
+@mixin flex-list-column($gap: 0) {
+  @include flex-column;
+
+  gap: $gap;
+}
+
+@mixin flex-list-wrap($row-gap: 0, $column-gap: 0) {
+  @include flex-list($row-gap $column-gap);
+
+  flex-wrap: wrap;
+}
+
+@mixin thin-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 8px;
+    background-color: #000;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 8px;
+    border-radius: 8px;
+    background-color: #cfcfcf;
+  }
+
+  @supports (not selector(::-webkit-scrollbar)) {
+    scrollbar-width: thin;
+  }
+}
