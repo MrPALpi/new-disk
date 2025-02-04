@@ -1,0 +1,1 @@
+import{_ as o,o as t,c as r,a as s}from"./index-CKXG6Dod.js";const n={},c={width:"18",height:"18",viewBox:"0 0 18 18",fill:"none",xmlns:"http://www.w3.org/2000/svg"};function a(l,e){return t(),r("svg",c,e[0]||(e[0]=[s("path",{d:"M1 9H17M9 1L9 17",stroke:"currentColor","stroke-width":"2","stroke-linecap":"round"},null,-1)]))}const d=o(n,[["render",a]]);export{d as default};
