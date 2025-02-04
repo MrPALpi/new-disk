@@ -4,7 +4,7 @@ import type { AxiosInstance, AxiosError, AxiosResponse, InternalAxiosRequestConf
 import type { ApiError } from '@/shared/types'
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL,
+  baseURL: import.meta.env.VITE_PROXY_URL,
   headers: {
     'Content-type': 'application/json',
   },
