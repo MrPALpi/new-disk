@@ -39,7 +39,7 @@ const addNote = async (): Promise<void> => {
     <div class="form__inputs">
       <v-input
         v-model="title"
-        :limit="32"
+        :limit="100"
         name="title"
         label="Название заметки"
         placeholder="Введите название"
@@ -47,7 +47,7 @@ const addNote = async (): Promise<void> => {
 
       <v-input
         v-model="content"
-        :limit="128"
+        :limit="500"
         name="title"
         label="Текст заметки"
         placeholder="Введите текст"
