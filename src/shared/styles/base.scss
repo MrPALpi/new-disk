@@ -7,7 +7,7 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
+  font-weight: 500;
 }
 
 #app {
@@ -24,7 +24,6 @@ body,
   color: $white;
   background-color: $dark;
   font-size: 16px;
-  font-weight: 500;
   line-height: 24px;
   font-family: 'Montserrat', sans-serif;
   text-rendering: optimizeLegibility;

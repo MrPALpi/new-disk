@@ -22,7 +22,7 @@ watchEffect(() => {
 <template>
   <label class="input-label">
     <span v-if="!!label?.length" class="input-label__text text-small">{{ label }}</span>
-    <span class="input-label__box">
+    <span class="input-label__box input-label__box_area">
       <textarea v-model="model" v-bind="$attrs" class="input-label__area input" />
     </span>
     <span class="input-label__bottom text-small">
@@ -42,5 +42,9 @@ watchEffect(() => {
 .input-label__area {
   resize: none;
   height: 280px;
+}
+
+.input-label__box_area {
+  padding: 16px;
 }
 </style>

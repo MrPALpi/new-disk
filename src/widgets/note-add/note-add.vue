@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { shallowRef } from 'vue'
 import { useNoteStore } from '@/entites/note'
-import { VForm, VInput, VButton } from '@/shared/ui'
+import { VForm, VInput, VButton, VTextarea } from '@/shared/ui'
 
 const emit = defineEmits(['close'])
 
@@ -45,7 +45,7 @@ const addNote = async (): Promise<void> => {
         placeholder="Введите название"
       />
 
-      <v-input
+      <v-textarea
         v-model="content"
         :limit="500"
         name="title"
