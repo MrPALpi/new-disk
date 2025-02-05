@@ -25,9 +25,23 @@ const emit = defineEmits(['delete'])
 .note {
   height: max-content;
   border-radius: 12px;
-  border-top-right-radius: 10px transparent;
+  position: relative;
+  border-top-right-radius: 0;
+  overflow: hidden;
   background-color: $green-light;
   box-shadow: 0px 15px 15px -10px rgba(0, 0, 0, 0.4);
+
+  &::before {
+    content: '';
+    border-top: 20px solid $dark;
+    border-right: 20px solid $dark;
+    border-bottom: 20px solid $green;
+    border-left: 20px solid $green;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 20px;
+  }
 }
 
 .note__header {
