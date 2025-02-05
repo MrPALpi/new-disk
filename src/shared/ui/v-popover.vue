@@ -11,11 +11,10 @@ const popoverStyle = computed(() => {
   if (!trigger.value || !popover.value) return {}
 
   const { top, left, width } = trigger.value.getBoundingClientRect()
+  const popoverWidth = popover.value.offsetWidth
   return {
     top: `${top + window.scrollY + 70}px`,
-    left: `${left + window.scrollX + width - popover.value.clientWidth + 20}px`,
-
-    '--arrow-place': `${popover.value.offsetWidth / 2}px`,
+    left: `${left + width - popoverWidth + window.scrollX}px`,
   }
 })
 
