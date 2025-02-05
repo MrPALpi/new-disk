@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SvgIcon } from '@/shared/ui'
+import { VIcon } from '@/shared/ui'
 </script>
 
 <template>
@@ -15,7 +15,7 @@ import { SvgIcon } from '@/shared/ui'
         храни его в&nbsp;облаке.
       </h2>
     </div>
-    <svg-icon name="miniature" class="home__logo" />
+    <v-icon name="miniature" class="home__logo" />
   </div>
 </template>
 

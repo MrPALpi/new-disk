@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { shallowRef, computed, defineModel } from 'vue'
 import vInput from './v-input.vue'
-import svgIcon from './svg-icon.vue'
+import VIcon from './v-icon.vue'
 
 const model = defineModel<string>('model')
 const showPassword = shallowRef<boolean>(false)
@@ -16,8 +16,8 @@ const HIDE_ICON = 'eye-close'
     <template #right>
       <span @click="showPassword = !showPassword">
         <transition name="icon" mode="out-in">
-          <svg-icon v-if="showPassword" :name="HIDE_ICON" class="input-label__icon" />
-          <svg-icon v-else :name="SHOW_ICON" class="input-label__icon" />
+          <v-icon v-if="showPassword" :name="HIDE_ICON" class="input-label__icon" />
+          <v-icon v-else :name="SHOW_ICON" class="input-label__icon" />
         </transition>
       </span>
     </template>

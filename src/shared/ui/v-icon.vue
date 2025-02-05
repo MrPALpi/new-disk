@@ -19,7 +19,7 @@ const dinamicIcon = computed(() =>
 </template>
 
 <style lang="scss" scoped>
-.svg-icon {
+.v-icon {
   display: inline-block;
 }
 </style>

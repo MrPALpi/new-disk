@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useUserStore } from '../model'
-import { SvgIcon, VPopover } from '@/shared/ui'
+import { VIcon, VPopover } from '@/shared/ui'
 import { useRouter } from 'vue-router'
 
 const userStore = useUserStore()
@@ -17,7 +17,7 @@ const logout = () => {
     <template #trigger>
       <div class="user-info">
         <span class="user-info__name text-small">{{ userStore.email }}</span>
-        <svg-icon name="user" class="user-info__icon" />
+        <v-icon name="user" class="user-info__icon" />
       </div>
     </template>
     <template #content>
@@ -37,10 +37,15 @@ const logout = () => {
 }
 
 .user-info__name {
-  flex: 1 1 215px;
+  flex: 0 1 215px;
+  max-width: 215px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @include to-mobile {
+    display: none;
+  }
 }
 
 .exit {

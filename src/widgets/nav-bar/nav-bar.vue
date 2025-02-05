@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { SvgIcon } from '@/shared/ui'
+import { VIcon } from '@/shared/ui'
 </script>
 
 <template>
   <div class="nav-bar container">
     <router-link to="/" class="nav-bar__home-link">
-      <svg-icon name="logo" class="nav-bar__logo" />
+      <v-icon name="logo" class="nav-bar__logo" />
     </router-link>
 
     <div class="nav-bar__right">

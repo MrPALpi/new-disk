@@ -1,4 +1,4 @@
-export { default as SvgIcon } from './svg-icon.vue'
+export { default as VIcon } from './v-icon.vue'
 export { default as VButton } from './v-button.vue'
 export { default as VInput } from './v-input.vue'
 export { default as VTextarea } from './v-textarea.vue'

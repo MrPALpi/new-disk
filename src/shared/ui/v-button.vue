@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SvgIcon from './svg-icon.vue'
+import VIcon from './v-icon.vue'
 
 defineProps({
   label: String,
@@ -14,7 +14,7 @@ defineProps({
     :class="{ [`btn_pos-icon-${iconPos}`]: iconPos, btn_rounded: rounded }"
     class="btn text-normal"
   >
-    <svg-icon v-if="icon" :name="icon" class="btn__icon" />
+    <v-icon v-if="icon" :name="icon" class="btn__icon" />
     <template v-if="label">
       {{ label }}
     </template>
